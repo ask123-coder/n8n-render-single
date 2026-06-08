@@ -1,17 +1,19 @@
 # Plan de Crecimiento — Alberto Saltiel × Claude
 
-*Generado: Mayo 2026 · Basado en: Digital Passport + análisis de 93 conversaciones ChatGPT + recursos oficiales Anthropic*
+*Actualizado: junio 2026 · Integra: Digital Passport + 93 conversaciones ChatGPT + Plan Maestro ASK v4 + recursos Anthropic*
 
 ---
 
 ## Executive Summary
 
-Tienes el instinto de automatización, el stack técnico, y la visión estratégica. El gap no es de conocimiento — es de **protocolo**. Tus conversaciones de ChatGPT muestran un patrón claro: cuando el prompt inicial es sólido, resuelves en 2-3 turnos. Cuando no lo es, terminas con 100-167 mensajes de clarificación.
+El objetivo no es "aprender Claude". Es **usar Claude como motor de ASK para generar $1,020k MXN antes de noviembre 2027**. Las habilidades técnicas de Claude son los instrumentos, no el fin.
 
-El plan tiene tres fases:
-1. **30 días** — Eliminar el spiral. Prompting estructurado como hábito.
-2. **60 días** — Trasladar tu instinto de automatización a Claude Code (Skills, Hooks, MCP).
-3. **90 días** — Operar como elite: Subagentes, Routines, Agent SDK. Sistemas que se ejecutan solos.
+Tu gap no es de conocimiento — es de protocolo y sistemas. Tienes el instinto, el stack y la visión. Lo que falta: prompts front-loaded que eviten espirales de 100 turnos, Skills que sistematicen tu delivery, y Notion+MCP como cerebro operativo vivo dentro de Claude Code.
+
+**Alineación con fases ASK:**
+- 30 días → Cierre Fase 0 (junio 2026): Claude listo para operar el negocio
+- 60 días → Arranque Fase 1 (julio 2026): Claude activo en entrega a clientes
+- 90 días → Fase 1 en velocidad (agosto-septiembre 2026): pipeline automatizado
 
 ---
 
@@ -19,114 +21,112 @@ El plan tiene tres fases:
 
 | Dimensión | Estado actual | Target 90 días |
 |---|---|---|
-| Prompt sophistication | 10% avanzado, 56% básico | >60% avanzado |
+| Prompt sophistication | 10% avanzado, 56% básico (<100 chars) | >60% avanzado |
 | Turns por sesión técnica | 100-167 (espiral) | <15 (front-loaded) |
-| Reutilización de contexto | Manual, ad-hoc | Automatizada via Skills |
+| Reutilización de contexto | Manual, ad-hoc | Automática via CLAUDE.md + Skills |
 | Claude Code dominio | CLI básico | Skills + Hooks + MCP activos |
-| Sistemas autónomos con Claude | 0 | 3+ Routines corriendo |
+| Notion via MCP | Databases creadas | Claude lee/escribe Notion en tiempo real |
+| Propuestas ASK generadas con Claude | 0 sistematizadas | Template + `/ask-proposal` skill activo |
+| Sistemas autónomos | 0 | 2+ Routines corriendo |
 
 ---
 
 ## Lecciones Personalizadas
 
-### L1 — El Problema de los 100 Turnos
-**Archivo:** `lessons/01-el-problema-de-los-100-turnos.md`
-
-Tu mayor oportunidad de eficiencia. Aprenderás a front-load contexto para convertir espirales en sesiones de <10 turnos. Template de debug técnico incluido.
-
-### L2 — De Terse a Estructurado (sin perder velocidad)
-**Archivo:** `lessons/02-de-terse-a-estructurado.md`
-
-El 56% de tus prompts son <100 caracteres. Aprenderás el framework PCICO en <30 segundos de escritura, con atajos para no ralentizar tu flujo.
-
-### L3 — Claude Code Skills como Módulos de No-Code
-**Archivo:** `lessons/03-skills-como-modulos.md`
-
-Analogía directa: Skills = módulos reutilizables. Aprenderás a crear `/prompt-audit`, `/workflow-debug`, y `/plan-builder` — tus propios módulos de Make dentro de Claude.
-
-### L4 — MCP como Integraciones
-**Archivo:** `lessons/04-mcp-como-integraciones.md`
-
-MCP (Model Context Protocol) = conectores de Claude. Mapeo directo a tu experiencia con APIs y Webhooks. Conectar Claude a Google Drive, Airtable, o sistemas custom.
-
-### L5 — Hooks como Triggers de Automatización
-**Archivo:** `lessons/05-hooks-como-triggers.md`
-
-Hooks en Claude Code = triggers en Make/n8n. Ejecuta acciones antes/después de cualquier operación de Claude. Tu lógica de automatización, dentro del entorno de desarrollo.
-
-### L6 — Subagentes como Flows Paralelos
-**Archivo:** `lessons/06-subagentes-como-flows-paralelos.md`
-
-Subagentes = flows en paralelo con diferentes responsabilidades. Aprenderás a orquestar múltiples instancias de Claude para tareas complejas, análogo a ramas paralelas en n8n.
+| # | Lección | Archivo | Relevancia para ASK |
+|---|---|---|---|
+| L1 | El Problema de los 100 Turnos | `lessons/01-...` | Debug de automatizaciones para clientes |
+| L2 | De Terse a Estructurado | `lessons/02-...` | Propuestas, scripts, contenido de cursos |
+| L3 | Skills como Módulos | `lessons/03-...` | Sistema de delivery reproducible |
+| L4 | MCP como Integraciones | `lessons/04-...` | Notion ya conectado — activar ahora |
+| L5 | Hooks como Triggers | `lessons/05-...` | Automatización del workflow de desarrollo |
+| L6 | Subagentes como Flows Paralelos | `lessons/06-...` | Análisis inmobiliario para clientes |
 
 ---
 
 ## Plan 30 / 60 / 90 Días
 
-### 30 días — Protocolo Base
+### 30 días — Cierre Fase 0 (junio 2026)
 
-| Semana | Acción | Entregable |
+Objetivo: Claude Code operacional como herramienta de negocio antes del lanzamiento.
+
+| Semana | Acción | Entregable para ASK |
 |---|---|---|
-| 1 | Leer L1 + L2. Instalar `/prompt-audit` skill | Prompts con PCICO consistente |
-| 2 | Template de debug técnico en práctica | 0 sesiones de >30 turnos |
-| 3 | Leer L3. Crear 3 Skills propios | `/plan-builder`, `/workflow-debug`, `/brief-content` |
-| 4 | Auditoría de sesiones: medir turns promedio | Baseline documentado |
+| 1 | Leer L1 + L2. Activar `/workflow-debug` y `/prompt-audit` | 0 sesiones de debug >30 turnos |
+| 2 | Leer L4. Conectar Claude Code a Notion via MCP — verificar que lee D1-D6 | Claude consulta Pipeline y Clientes en tiempo real |
+| 3 | Leer L3. Crear `/ask-proposal` y `/course-builder` | Primer borrador de propuesta generada por Claude |
+| 4 | Cerrar pendientes Fase 0: subir cursos anteriores a knowledge base | Base de conocimiento ASK completa en el repo |
 
-**Métrica de éxito:** Turns promedio por sesión técnica < 20.
+**Métrica de éxito:** CLAUDE.md activo + Notion MCP funcionando + 3 Skills de negocio operativos.
 
-### 60 días — Automatización Claude
+### 60 días — Arranque Fase 1 (julio 2026)
 
-| Semana | Acción | Entregable |
+Objetivo: Claude como copilot activo en la entrega a clientes y activación del pipeline de referidos HIR Casa.
+
+| Semana | Acción | Entregable para ASK |
 |---|---|---|
-| 5 | Leer L4. Conectar MCP con 1 herramienta de tu stack | Claude + Airtable o Google Drive activo |
-| 6 | Leer L5. Configurar 2 Hooks en tu workflow de desarrollo | Auto-validación o auto-formato activo |
-| 7 | CLAUDE.md con Digital Passport como contexto persistente | 0 re-explicaciones de contexto |
-| 8 | Auditoría: ¿qué tareas manuales puedes delegar a Claude? | Lista de candidatos para Routines |
+| 5 | Leer L5. Configurar Hook de log de sesiones | Visibilidad de cuánto tiempo dedicas a cada área |
+| 6 | Activar pipeline de referidos HIR Casa con Claude: analizar encuestas, generar scripts de seguimiento | Script `/ask-referral-followup` + análisis de respuestas |
+| 7 | Primer cliente Fase 1: usar Claude para preparar propuesta Nivel 1 o 2 | Propuesta generada con `/ask-proposal` en <30 min |
+| 8 | Documentar caso HIR Casa con Claude (Anexo G) | Primer draft del caso de estudio listo |
 
-**Métrica de éxito:** Al menos 1 integración MCP activa + contexto persistente funcionando.
+**Métrica de éxito:** Al menos 1 propuesta enviada generada con Claude + pipeline de referidos activado.
 
-### 90 días — Operación Elite
+### 90 días — Fase 1 en velocidad (agosto-septiembre 2026)
 
-| Semana | Acción | Entregable |
+Objetivo: Sistemas autónomos que mantengan el pipeline vivo en modo Mínimo.
+
+| Semana | Acción | Entregable para ASK |
 |---|---|---|
-| 9 | Leer L6. Primer flujo con Subagentes | Tarea compleja resuelta en paralelo |
-| 10 | Configurar 1 Routine (tarea recurrente automatizada) | Routine activa en producción |
-| 11 | Documentar tus 5 Skills más usados | Library personal de Skills |
-| 12 | Evaluar Agent SDK para un proyecto real | Prototipo o plan técnico |
+| 9 | Leer L6. Crear subagentes para análisis de cliente: `client-researcher` + `proposal-drafter` | Flujo de propuesta paralelo: investigación + redacción simultánea |
+| 10 | Configurar primera Routine: revisión semanal de pipeline en Notion | Routine activa cada lunes — resumen de D2 Pipeline sin intervención manual |
+| 11 | Blog post de Claude Code: leer Dynamic Workflows + Managed Agents | Evaluar si Managed Agents aplica para automatizaciones Nivel 4 |
+| 12 | Auditoría: ¿qué tareas de Fase 1 siguen siendo manuales? | Lista de candidatos para automatizar en Fase 2 |
 
-**Métrica de éxito:** 3+ sistemas autónomos con Claude corriendo sin intervención manual.
+**Métrica de éxito:** 1 Routine activa + flujo de propuesta <45 min de principio a fin.
 
 ---
 
-## Skills a Crear (Claude Code)
+## Skills ASK (Claude Code)
 
-| Skill | Archivo | Función |
+| Skill | Archivo | Para qué en ASK |
 |---|---|---|
-| `/prompt-audit` | `.claude/commands/prompt-audit.md` | Revisa y mejora un prompt antes de enviarlo |
-| `/workflow-debug` | `.claude/commands/workflow-debug.md` | Template estructurado para debug de automatizaciones |
-| `/plan-builder` | `.claude/commands/plan-builder.md` | Genera plan con timeline, hitos y métricas |
-| `/context-load` | `.claude/commands/context-load.md` | Carga el Digital Passport como contexto de sesión |
-| `/brief-content` | `.claude/commands/brief-content.md` | Brief estructurado para contenido (tono, audiencia, formato) |
+| `/context-load` | `.claude/commands/context-load.md` | Carga perfil + contexto ASK al inicio de sesión |
+| `/prompt-audit` | `.claude/commands/prompt-audit.md` | Mejora prompts antes de enviar |
+| `/workflow-debug` | `.claude/commands/workflow-debug.md` | Debug de Make/n8n para clientes |
+| `/plan-builder` | `.claude/commands/plan-builder.md` | Planes con hitos y métricas |
+| `/brief-content` | `.claude/commands/brief-content.md` | Brief para scripts, posts, material de cursos |
+| `/ask-proposal` | `.claude/commands/ask-proposal.md` | Genera propuesta comercial (Nivel 1-4) |
+| `/course-builder` | `.claude/commands/course-builder.md` | Estructura curso en cualquier nivel |
+
+## Subagentes activos
+
+| Agente | Archivo | Uso |
+|---|---|---|
+| `real-estate-analyst` | `.claude/agents/real-estate-analyst.md` | Análisis de mercado para clientes inmobiliarios |
 
 ---
 
 ## Recursos Prioritarios
 
-| Recurso | URL | Por qué es relevante para ti |
+| Prioridad | Recurso | Por qué |
 |---|---|---|
-| Claude Code Docs | code.claude.com/docs/en/overview | Hooks, Skills, MCP, Subagents — tu palanca principal |
-| Claude API Docs | platform.claude.com/docs/en/home | Tool use, Prompt caching — nivel API |
-| Build with Claude | anthropic.com/learn/build-with-claude | Solo módulos: Tool use + Agents (el resto ya lo sabes) |
-| GitHub Anthropic | github.com/anthropics | Ejemplos reales, Agent SDK, repos de referencia |
+| 1 | [How to configure hooks](https://claude.com/blog/how-to-configure-hooks) | Triggers = automatización del workflow diario |
+| 2 | [Subagents in Claude Code](https://claude.com/blog/subagents-in-claude-code) | Análisis paralelo para propuestas de clientes |
+| 3 | [Lessons: How we use skills](https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills) | Mejores prácticas de Skills del equipo de Anthropic |
+| 4 | [Introducing routines](https://claude.com/blog/introducing-routines-in-claude-code) | Revisión de pipeline automática (semana 10) |
+| 5 | [Claude Code docs](https://code.claude.com/docs/en/overview) | Referencia técnica de todo lo anterior |
 
 ---
 
 ## Métricas de Progreso
 
-| Métrica | Ahora | 30d | 60d | 90d |
+| Métrica | Ahora | 30d (Fase 0 cierre) | 60d (Fase 1 arranque) | 90d (Fase 1 velocidad) |
 |---|---|---|---|---|
-| Turns promedio / sesión técnica | ~100 | <20 | <15 | <10 |
-| Skills activos propios | 0 | 3 | 5 | 8+ |
-| Integraciones MCP | 0 | 0 | 1 | 3+ |
-| Routines autónomas | 0 | 0 | 1 | 3+ |
+| Turns / sesión técnica | ~100 | <20 | <15 | <10 |
+| Skills activos | 5 base | +2 ASK | +2 más | 10+ |
+| Notion MCP activo | Databases creadas | Leer/escribir funcionando | En uso diario | Routine automática |
+| Propuestas con Claude | 0 | Template listo | 1 enviada | 3+ en pipeline |
+| Tiempo por propuesta | Manual, variable | <60 min | <45 min | <30 min |
+| Routines autónomas | 0 | 0 | 0 | 1 (pipeline review) |
 | % prompts avanzados | 10% | 40% | 60% | >75% |
