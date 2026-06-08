@@ -127,9 +127,15 @@ Empresas medianas mexicanas (50-500 empleados), dueño/director identificable, p
 | 2 | Ene-Jun 2027 | $300-450k |
 | 3 | Jul-Nov 2027 | $200-300k |
 
-## Graphiti + Obsidian (proyecto satélite)
+## Second Brain: Graphify + Obsidian (proyecto satélite)
 
-Stack Personal de Conocimiento: Obsidian + Graphiti (Nous Research) + code agents. Proyecto satélite — se trackea separado del plan principal. Toda sesión y knowledge relevante debe conectarse a este sistema de memoria.
+Stack Personal de Conocimiento: Obsidian + **Graphify** (skill desktop) + code agents. Proyecto satélite — se trackea separado del plan principal. Toda sesión y knowledge relevante debe conectarse a este sistema de memoria via git pull en desktop.
+
+**Distinción importante:**
+- **Graphify** → skill activo en desktop que conecta sesiones Claude con Obsidian vault (self-hosted)
+- **Graphiti** (Nous Research) → librería separada usada para el demo "Hermes Agent" / asistente 24/7 (Fase 2-3 Enterprise)
+
+**Flujo de sync:** Web/Mobile → Git push → Desktop `git pull` → Vault actualizada (requiere Obsidian Git plugin o hook).
 
 ## Skills disponibles
 
