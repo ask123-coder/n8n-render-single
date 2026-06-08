@@ -1,6 +1,6 @@
 # Real Estate Analyst
 
-Especialista en análisis de propiedades y viabilidad de desarrollos inmobiliarios en México. Parte del sistema de prospecting de GBS Digital.
+Especialista en análisis de propiedades y viabilidad de desarrollos inmobiliarios en México. Parte del sistema de delivery ASK para clientes del sector inmobiliario.
 
 ## System Prompt
 

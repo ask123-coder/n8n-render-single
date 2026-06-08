@@ -48,16 +48,16 @@ Tu gap no es de conocimiento — es de protocolo y sistemas. Tienes el instinto,
 
 ### 30 días — Cierre Fase 0 (junio 2026)
 
-Objetivo: Claude Code operacional como herramienta de negocio antes del lanzamiento.
+Objetivo: Claude Code operacional como herramienta de negocio. **Sistema ya construido — foco en activar y validar.**
 
 | Semana | Acción | Entregable para ASK |
 |---|---|---|
-| 1 | Leer L1 + L2. Activar `/workflow-debug` y `/prompt-audit` | 0 sesiones de debug >30 turnos |
-| 2 | Leer L4. Conectar Claude Code a Notion via MCP — verificar que lee D1-D6 | Claude consulta Pipeline y Clientes en tiempo real |
-| 3 | Leer L3. Crear `/ask-proposal` y `/course-builder` | Primer borrador de propuesta generada por Claude |
-| 4 | Cerrar pendientes Fase 0: subir cursos anteriores a knowledge base | Base de conocimiento ASK completa en el repo |
+| 1 | Migrar repo a `ask-ai`. Leer L1 + L2. Usar `/workflow-debug` en debug real | 0 sesiones de debug >30 turnos |
+| 2 | Conectar Claude Code a Notion via MCP — verificar que lee D1-D6 en tiempo real | Claude consulta Pipeline y Clientes live |
+| 3 | Primer uso real de `/ask-proposal`: generar propuesta para prospecto inmobiliario | Propuesta enviada generada con Claude en <30 min |
+| 4 | Activar referidos HIR Casa: correr `/ask-upsell-analyzer` con encuestas existentes | Script de seguimiento + al menos 1 prospecto calificado |
 
-**Métrica de éxito:** CLAUDE.md activo + Notion MCP funcionando + 3 Skills de negocio operativos.
+**Métrica de éxito:** Notion MCP funcionando + 1 propuesta real enviada + pipeline de referidos HIR Casa activado.
 
 ### 60 días — Arranque Fase 1 (julio 2026)
 
@@ -98,6 +98,10 @@ Objetivo: Sistemas autónomos que mantengan el pipeline vivo en modo Mínimo.
 | `/brief-content` | `.claude/commands/brief-content.md` | Brief para scripts, posts, material de cursos |
 | `/ask-proposal` | `.claude/commands/ask-proposal.md` | Genera propuesta comercial (Nivel 1-4) |
 | `/course-builder` | `.claude/commands/course-builder.md` | Estructura curso en cualquier nivel |
+| `/ask-encuesta-deployer` | `.claude/commands/ask-encuesta-deployer.md` | Crea las 3 encuestas post-curso para Tally |
+| `/ask-pipeline-review` | `.claude/commands/ask-pipeline-review.md` | Revisión semanal de pipeline (domingos con pareja) |
+| `/ask-upsell-analyzer` | `.claude/commands/ask-upsell-analyzer.md` | Analiza encuestas P7/P9 para detectar upsells |
+| `/ask-change-mgmt` | `.claude/commands/ask-change-mgmt.md` | Propuesta Change Management externo ($30k/mes, Fase 2+) |
 
 ## Subagentes activos
 

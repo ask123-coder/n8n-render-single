@@ -4,50 +4,95 @@
 
 56% de tus prompts son <100 caracteres. Para asks simples esto funciona. Para asks técnicos o estratégicos, genera ambigüedad que cuesta múltiples turnos de corrección.
 
-La meta no es escribir más — es escribir mejor las veces que importa.
+La meta no es escribir más — es escribir **better-loaded** las veces que importa. Ningún acrónimo te va a salvar si no tienes claro el principio: **Claude no puede adivinar lo que no le diste.**
 
-## El framework PCICO (en <30 segundos)
+## El principio (no el acrónimo)
 
-| Bloque | Pregunta que responde | ¿Siempre necesario? |
-|---|---|---|
-| **P**ersona | ¿Qué rol debe adoptar Claude? | No (solo si el rol cambia el output) |
-| **C**ontexto | ¿Qué background necesita saber? | Sí, siempre |
-| **I**nstrucción | ¿Qué exactamente debe hacer? | Sí, siempre |
-| **C**onstraints | ¿Qué no puede hacer / qué límites hay? | Si aplica |
-| **O**utput | ¿En qué formato quiero la respuesta? | Sí, siempre |
+Antes de enviar un prompt complejo, respóndete 3 preguntas:
+
+1. **¿Qué sabe Claude que necesita saber?** → Contexto relevante, no todo
+2. **¿Qué quiero que haga exactamente?** → Verbo claro + scope definido
+3. **¿Cómo quiero recibir la respuesta?** → Formato + extensión + nivel
+
+Si las 3 tienen respuesta, el prompt está listo. Si no, está incompleto.
+
+## 3 patrones según el tipo de ask
+
+### Patrón RTF — Para asks rápidos (80% de los casos)
+**R**ol · **T**area · **F**ormato
+
+```
+Eres [rol específico]. [Tarea concreta con contexto mínimo]. Output: [formato y extensión].
+```
+
+Ejemplo:
+> Eres un copy director B2B. Reescribe este asunto de email para directores de empresas inmobiliarias medianas en México — sin jerga técnica, orientado a beneficio. Max 60 caracteres.
+
+### Patrón Deep — Para asks estratégicos o complejos
+**C**ontexto · **T**area · **C**onstraints · **F**ormato · **E**jemplo (opcional)
+
+```
+Contexto: [background necesario — stack, situación, restricciones del entorno]
+Tarea: [qué exactamente debe producir Claude]
+Constraints: [qué no puede hacer, qué límites hay]
+Output: [formato, extensión, nivel de detalle]
+Ejemplo de lo que quiero: [si aplica]
+```
+
+Ejemplo:
+> **Contexto:** Tengo un curso de IA para empresa inmobiliaria (50 empleados, perfil no técnico). Ya existe material base de HIR Casa.  
+> **Tarea:** Genera el módulo de apertura: gancho + objetivos + ejercicio de activación.  
+> **Constraints:** No mencionar ChatGPT por nombre. Lenguaje accesible nivel secundaria.  
+> **Output:** Estructura en markdown, máx 400 palabras, listo para copiar a presentación.
+
+### Patrón Few-Shot — Para formatos que Claude debe replicar
+Cuando el output debe seguir un estilo específico, muestra primero:
+
+```
+Ejemplos del formato que quiero:
+[ejemplo 1]
+[ejemplo 2]
+
+Ahora genera [N] más con estas variaciones: [especificación]
+```
+
+Ejemplo:
+> Estos son 2 subject lines que funcionaron para mi audiencia de directores mexicanos:
+> - "Tu equipo lleva 6 meses sin usar IA. Aquí está por qué."
+> - "El problema con los cursos de IA que ya tomaste"
+>
+> Genera 5 más con el mismo tono. Tema: automatización de procesos.
 
 ## Regla práctica
 
-- **Ask simple** (facts, conversión, resumen corto): terse está bien.
-- **Ask técnico o estratégico**: mínimo C + I + O.
-- **Ask de sistema o plan**: PCICO completo.
+| Tipo de ask | Patrón | Tiempo de escritura |
+|---|---|---|
+| Fact, resumen, conversión simple | Terse está bien | <10 seg |
+| Reescritura, copy, análisis rápido | RTF | 20-30 seg |
+| Estrategia, propuesta, plan | Deep | 45-90 seg |
+| Replicar un estilo o formato | Few-Shot | 60 seg + ejemplos |
+| Debug técnico (Make/n8n) | Template L1 | Usar `/workflow-debug` |
 
-## Comparación real (de tu historial)
+## El atajo real
 
-**Terse (lo que hacías):**
-> "Break down the top 5% of knowledge I need to master no-code development"
+El tiempo que "pierdes" escribiendo un prompt estructurado (45 seg) lo recuperas en el primer turno. Un prompt terse que genera 3 rondas de corrección cuesta 5-10 minutos. **La inversión es negativa.**
 
-**Estructurado (lo que funciona mejor):**
-> **Contexto:** Tengo 3 años de experiencia con Make, n8n y Airtable. Domino flujos básicos e intermedios.
-> **Instrucción:** Dame el 5% de conocimiento de no-code que separa a los practitioners del top tier del resto.
-> **Constraints:** Enfocado en automatización y AI integration, no en apps visuales tipo Bubble/Webflow.
-> **Output:** Lista priorizada, máx 10 ítems, con una línea de por qué cada uno importa.
-
-La versión estructurada elimina 2-3 turnos de "¿pero para qué nivel?" y "¿incluyo herramientas de frontend?".
-
-## Atajo de velocidad
-
-Guarda este snippet como template de texto expansor (Raycast, TextExpander, o atajo de teclado):
+Guarda estos 3 snippets como text expanders (Raycast / TextExpander):
 
 ```
-C: 
-I: 
+# RTF
+Eres []. [tarea + contexto mínimo]. Output: [formato, extensión]
+
+# Deep  
+Contexto: 
+Tarea: 
 Constraints: 
-O: [formato: ] [nivel: ]
-```
+Output: [formato] [extensión] [nivel]
 
-Llenar esto toma <20 segundos y elimina el spiral.
+# Debug (ver L1)
+/workflow-debug
+```
 
 ## Ejercicio
 
-Toma los últimos 5 prompts que escribiste. Identifica cuáles eran de categoría "técnico o estratégico" y tenían <100 chars. Reescríbelos con C+I+O. Nota la diferencia en especificidad.
+Toma los últimos 3 prompts que te generaron >5 turnos de corrección. Identifica cuál de las 3 preguntas no tenía respuesta en el prompt original. Reescríbelos con el patrón correcto. La diferencia suele ser 1 prompt vs 1 thread.

@@ -25,11 +25,11 @@
 - AI como multiplicador operacional, no como herramienta de contenido
 - Dominio de Claude Code como entorno de desarrollo principal
 
-## Nivel en LLMs (baseline)
+## Nivel en LLMs (baseline junio 2026)
 
-- **ChatGPT:** Intermedio-Avanzado. Buen instinto para roleplay prompts. Gap principal: prompts iniciales subespecificados → espirales de 100+ turnos.
-- **Claude:** En desarrollo activo. Familiarizado con API básica y Claude Code CLI.
-- **Prompting:** Framework PCICO (Persona/Contexto/Instrucción/Constraints/Output) conocido pero aplicado inconsistentemente.
+- **ChatGPT:** Intermedio-Avanzado. Buen instinto para roleplay prompts. Gap documentado: prompts iniciales subespecificados → espirales de 100+ turnos.
+- **Claude / Claude Code:** En ramp-up activo. Skills + Subagentes + MCP configurados. Migrando de ChatGPT a Claude como plataforma principal.
+- **Prompting:** Usando patrones RTF / Deep / Few-Shot según tipo de ask. Principio activo: front-load specificity — Claude no adivina lo que no le diste. (Ver L2.)
 
 ## Estilo de comunicación preferido
 
