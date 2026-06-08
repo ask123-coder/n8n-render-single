@@ -34,16 +34,31 @@ Resultado: 3x más rápido, cada agente enfocado en su especialidad.
 
 ## Cómo funciona en Claude Code
 
+Los subagentes son archivos Markdown en `.claude/agents/` — igual que los Skills, pero con su propio system prompt y permisos de herramientas.
+
 ```
-# Le dices al orquestador:
-"Analiza esta propiedad. Lanza 3 subagentes en paralelo:
-1. Análisis de mercado y comparables
-2. Proyección financiera a 5 años
-3. Checklist de riesgos regulatorios
+.claude/
+├── commands/        ← Skills (slash commands)
+│   └── prompt-audit.md
+└── agents/          ← Subagentes
+    ├── market-analyst.md
+    ├── financial-modeler.md
+    └── risk-checker.md
+```
+
+Cada archivo de subagente define:
+- Su rol y system prompt
+- Qué herramientas puede usar
+- Qué modelo usar (opcional, puede ser diferente al orquestador)
+
+Luego le dices al orquestador:
+```
+"Analiza esta propiedad. Lanza los 3 subagentes en paralelo:
+market-analyst, financial-modeler, risk-checker.
 Sintetiza los resultados en un executive summary."
 ```
 
-Claude Code maneja la orquestación internamente usando el Agent SDK.
+Claude Code maneja la orquestación internamente.
 
 ## Aplicaciones para tus proyectos actuales
 
